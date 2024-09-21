@@ -1,10 +1,8 @@
 import streamlit as st
-from PIL import Image
 
-# Load the logo from a local file
-logo_url = "https://github.com/AyanShabbir/Tablets/blob/main/LOGObg.png"  # Replace with your logo URL
+# URL for the logo
+logo_url = "https://raw.githubusercontent.com/AyanShabbir/Tablets/main/LOGObg.png"  # Use raw URL for direct image access
 st.set_page_config(page_title="Tablets Clinic", layout="wide")
-
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
@@ -39,7 +37,7 @@ st.markdown("""
 # Display the logo
 st.markdown(f"""
     <div class="header">
-        <img src="data:image/png;base64,{st.image(logo, width=100, use_column_width=False)}" class="logo" />
+        <img src="{logo_url}" class="logo" />
         <h1 style="display: {'block' if selection == 'Home' else 'none'};">Welcome to Tablets Clinic</h1>
     </div>
 """, unsafe_allow_html=True)
@@ -48,16 +46,15 @@ st.markdown(f"""
 st.markdown("""
     <style>
         .card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.card p {
-    color: #000000; /* Set paragraph text color to black */
-}
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .card p {
+            color: #000000; /* Set paragraph text color to black */
+        }
         h3 {
             color: #2d572c; /* Dark green for headings */
         }
@@ -86,7 +83,6 @@ if selection == "Home":
     st.markdown("<br>", unsafe_allow_html=True)
     
     # Adding additional information
- 
     st.markdown("""
     <h3 style='text-align: center; color: #2d572c;'>Why Tablets?</h3>
     <ul style='text-align: center; list-style-type: none; padding: 0;'>
