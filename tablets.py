@@ -125,5 +125,6 @@ elif selection == "Contact Us":
         </div>
     """, unsafe_allow_html=True)
 
+# Footer
 st.markdown("---")
 st.markdown("© 2024 Tablets Clinic. All rights reserved.")
