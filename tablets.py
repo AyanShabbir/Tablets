@@ -1,7 +1,7 @@
 import streamlit as st
 
 # URL for the logo
-logo_url = "https://raw.githubusercontent.com/AyanShabbir/Tablets/main/LOGObg.png"  # Use raw URL for direct image access
+logo_url = "https://raw.githubusercontent.com/AyanShabbir/Tablets/main/LOGObg.png"
 st.set_page_config(page_title="Tablets Clinic", layout="wide", page_icon=logo_url)
 
 # Sidebar for navigation
@@ -15,39 +15,25 @@ st.markdown("""
         .header {
             display: flex;
             align-items: center;
-            justify-content: center; /* Center content */
+            justify-content: center;
             padding: 10px 0;
-            position: relative; /* Positioning for absolute logo */
+            position: relative;
         }
         .logo {
-            position: absolute; /* Position logo absolutely */
-            left: 20px; /* Adjust space from left */
-            width: 100px; /* Adjust size here */
+            position: absolute;
+            left: 20px;
+            width: 100px;
         }
         .main-title {
-            text-align: center; /* Center the title */
-            color: #2d572c; /* Dark green for the title */
-            font-size: 24px; /* Adjust font size if needed */
-            margin-left: 120px; /* Space for the logo */
-            margin-top: 0; /* Remove top margin */
+            text-align: center;
+            color: #2d572c;
+            font-size: 24px;
+            margin-left: 120px;
+            margin-top: 0;
         }
         .section {
-            margin-top: 80px; /* Add space above each section */
+            margin-top: 20px; /* Adjusted for less gap */
         }
-    </style>
-""", unsafe_allow_html=True)
-
-# Display the logo with added margin
-st.markdown(f"""
-    <div class="header">
-        <img src="{logo_url}" class="logo" />
-        <h1 style="display: {'block' if selection == 'Home' else 'none'}; margin-top: 60px;">Welcome to Tablets Clinic</h1>
-    </div>
-""", unsafe_allow_html=True)
-
-# Additional styles for the rest of the page
-st.markdown("""
-    <style>
         .card {
             background-color: white;
             border-radius: 10px;
@@ -55,40 +41,41 @@ st.markdown("""
             margin: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .card p {
-            color: #000000; /* Set paragraph text color to black */
-        }
         h3 {
-            color: #2d572c; /* Dark green for headings */
+            color: #2d572c;
         }
         p {
-            color: #dedede; /* Light gray for text */
+            color: #dedede;
         }
         .contact {
-            background-color: #2d572c; /* Dark green for contact section */
+            background-color: #2d572c;
             border-radius: 10px;
             padding: 20px;
             margin: 10px 0;
-            color: #ffffff; /* White for contact text */
+            color: #ffffff;
         }
         body {
-            background-color: #dedede; /* Light gray background for the main body */
+            background-color: #dedede;
         }
     </style>
 """, unsafe_allow_html=True)
 
+# Display the logo
+st.markdown(f"""
+    <div class="header">
+        <img src="{logo_url}" class="logo" />
+        <h1 class="main-title" style="margin-top: 20px;">Welcome to Tablets Clinic</h1>
+    </div>
+""", unsafe_allow_html=True)
+
 # Home Section
 if selection == "Home":
-    st.markdown("<h1 class='main-title' style='margin-top: 20px;'>Welcome to Tablets Clinic</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 class='section' style='margin-top: 10px; text-align: center;'>Your Health, Our Priority</h3>", unsafe_allow_html=True)
-    st.markdown("<p class='section' style='margin-top: 5px; text-align: center;'>At Tablets Clinic, we offer a variety of services to cater to your health needs.</p>", unsafe_allow_html=True)
+    st.markdown("<h3 class='section' style='text-align: center;'>Your Health, Our Priority</h3>", unsafe_allow_html=True)
+    st.markdown("<p class='section' style='text-align: center;'>At Tablets Clinic, we offer a variety of services to cater to your health needs.</p>", unsafe_allow_html=True)
     
-    # Adding additional spacing
-    st.markdown("<br>", unsafe_allow_html=True)
-
     # Additional information
     st.markdown("""
-    <h3 class='section' style='margin-top: 20px; text-align: center; color: #2d572c;'>Why Tablets?</h3>
+    <h3 class='section' style='text-align: center; color: #2d572c;'>Why Tablets?</h3>
     <ul style='text-align: center; list-style-type: none; padding: 0;'>
         <li style='margin: 10px 0; font-size: 18px;'>Experienced, Highly Qualified and PMC Registered Doctors</li>
         <li style='margin: 10px 0; font-size: 18px;'>State-of-the-Art Laboratory</li>
