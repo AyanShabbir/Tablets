@@ -3,10 +3,8 @@ from PIL import Image
 
 # Load the logo from a local file
 logo_url = "https://github.com/AyanShabbir/Tablets/blob/main/LOGObg.png"  # Replace with your logo URL
-st.set_page_config(page_title="Tablets Clinic", layout="wide", page_icon=logo_url)
-
-# Set page configuration
 st.set_page_config(page_title="Tablets Clinic", layout="wide")
+
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
