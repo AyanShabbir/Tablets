@@ -2,7 +2,7 @@ import streamlit as st
 
 # URL for the logo
 logo_url = "https://raw.githubusercontent.com/AyanShabbir/Tablets/main/LOGObg.png"  # Use raw URL for direct image access
-st.set_page_config(page_title="Tablets Clinic", layout="wide")
+st.set_page_config(page_title="Tablets Clinic", layout="wide", page_icon=logo_url)
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
@@ -31,14 +31,17 @@ st.markdown("""
             margin-left: 120px; /* Space for the logo */
             margin-top: 0; /* Remove top margin */
         }
+        .section {
+            margin-top: 80px; /* Add space above each section */
+        }
     </style>
 """, unsafe_allow_html=True)
 
-# Display the logo
+# Display the logo with added margin
 st.markdown(f"""
     <div class="header">
         <img src="{logo_url}" class="logo" />
-        <h1 style="display: {'block' if selection == 'Home' else 'none'};">Welcome to Tablets Clinic</h1>
+        <h1 style="display: {'block' if selection == 'Home' else 'none'}; margin-top: 60px;">Welcome to Tablets Clinic</h1>
     </div>
 """, unsafe_allow_html=True)
 
@@ -76,22 +79,22 @@ st.markdown("""
 
 # Home Section
 if selection == "Home":
-    st.markdown("<h3 style='text-align: center;'>Your Health, Our Priority</h3>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center;'>At Tablets Clinic, we offer a variety of services to cater to your health needs.</p>", unsafe_allow_html=True)
+    st.markdown("<h3 class='section' style='text-align: center;'>Your Health, Our Priority</h3>", unsafe_allow_html=True)
+    st.markdown("<p class='section' style='text-align: center;'>At Tablets Clinic, we offer a variety of services to cater to your health needs.</p>", unsafe_allow_html=True)
     
     # Adding additional spacing
     st.markdown("<br>", unsafe_allow_html=True)
     
     # Adding additional information
     st.markdown("""
-    <h3 style='text-align: center; color: #2d572c;'>Why Tablets?</h3>
+    <h3 class='section' style='text-align: center; color: #2d572c;'>Why Tablets?</h3>
     <ul style='text-align: center; list-style-type: none; padding: 0;'>
         <li style='margin: 10px 0; font-size: 18px;'>Experienced, Highly Qualified and PMC Registered Doctors</li>
         <li style='margin: 10px 0; font-size: 18px;'>State-of-the-Art Laboratory</li>
         <li style='margin: 10px 0; font-size: 18px;'>Associated Authentic Pharmacy</li>
     </ul>
 """, unsafe_allow_html=True)
-    
+
     # Adding images to the Home page
     st.image("https://scontent.fpew2-1.fna.fbcdn.net/v/t39.30808-6/277790565_108630745157561_6472859447440928934_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=SrnIlVCDOiEQ7kNvgF9X4pt&_nc_ht=scontent.fpew2-1.fna&oh=00_AYDj5BF4fvrhzwZhh9S_6bAwCkUJQzCiPLDWQhl0MQIuoA&oe=66F51173", caption="Tablets Clinic", use_column_width=True)
     st.image("https://scontent.fpew2-1.fna.fbcdn.net/v/t39.30808-6/278571671_110159415004694_5008292888592397998_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=XZ2cQcagCT4Q7kNvgFtma2r&_nc_ht=scontent.fpew2-1.fna&_nc_gid=AgEuXal5kKES_fDFyxhjbdn&oh=00_AYBuNzP8ZeuDnSCOzN5RSFNySlKH5kRk0lBIHH8CCjkoqw&oe=66F50A29", caption="First Aid Room", use_column_width=True)
@@ -99,7 +102,7 @@ if selection == "Home":
 
 # Departments Section
 elif selection == "Departments":
-    st.markdown("### Our Departments")
+    st.markdown("<h3 class='section'>Our Departments</h3>", unsafe_allow_html=True)
     cols = st.columns(3)
     department_info = {
         "Cardiology": "Heart health and wellness.",
@@ -116,6 +119,7 @@ elif selection == "Departments":
 
 # Contact Us Section
 elif selection == "Contact Us":
+    st.markdown("<h3 class='section'>Contact Us</h3>", unsafe_allow_html=True)
     st.markdown("""
         <div class='contact'>
             <p>For inquiries, please reach out via:</p>
