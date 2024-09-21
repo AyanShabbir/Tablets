@@ -1,7 +1,7 @@
 import streamlit as st
 
 # URL for the logo
-logo_url = "https://raw.githubusercontent.com/AyanShabbir/Tablets/main/LOGObg.png"  # Use raw URL for direct image access
+logo_url = "https://raw.githubusercontent.com/AyanShabbir/Tablets/main/LOGObg.png"
 st.set_page_config(page_title="Tablets Clinic", layout="wide", page_icon=logo_url)
 
 # Sidebar for navigation
@@ -15,33 +15,30 @@ st.markdown("""
         .header {
             display: flex;
             align-items: center;
-            justify-content: center; /* Center content */
-            padding: 10px 0;
-            position: relative; /* Positioning for absolute logo */
+            justify-content: center; 
+            padding: 0; /* Changed padding to reduce space */
+            position: relative; 
         }
         .logo {
-            position: absolute; /* Position logo absolutely */
-            left: 20px; /* Adjust space from left */
-            width: 100px; /* Adjust size here */
+            position: absolute; 
+            left: 20px; 
+            width: 100px; 
         }
         .main-title {
-            text-align: center; /* Center the title */
-            color: #2d572c; /* Dark green for the title */
-            font-size: 24px; /* Adjust font size if needed */
-            margin-left: 120px; /* Space for the logo */
-            margin-top: 0; /* Remove top margin */
-        }
-        .section {
-            margin-top: 80px; /* Add space above each section */
+            text-align: center; 
+            color: #2d572c; 
+            font-size: 24px; 
+            margin-left: 120px; 
+            margin-top: 10px; /* Reduced top margin */
         }
     </style>
 """, unsafe_allow_html=True)
 
-# Display the logo with added margin
+# Display the logo and title
 st.markdown(f"""
     <div class="header">
         <img src="{logo_url}" class="logo" />
-        <h1 style="display: {'block' if selection == 'Home' else 'none'}; margin-top: 60px;">Welcome to Tablets Clinic</h1>
+        <h1 style="display: {'block' if selection == 'Home' else 'none'};">Welcome to Tablets Clinic</h1>
     </div>
 """, unsafe_allow_html=True)
 
@@ -56,23 +53,23 @@ st.markdown("""
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .card p {
-            color: #000000; /* Set paragraph text color to black */
+            color: #000000; 
         }
         h3 {
-            color: #2d572c; /* Dark green for headings */
+            color: #2d572c; 
         }
         p {
-            color: #dedede; /* Light gray for text */
+            color: #dedede; 
         }
         .contact {
-            background-color: #2d572c; /* Dark green for contact section */
+            background-color: #2d572c; 
             border-radius: 10px;
             padding: 20px;
             margin: 10px 0;
-            color: #ffffff; /* White for contact text */
+            color: #ffffff; 
         }
         body {
-            background-color: #dedede; /* Light gray background for the main body */
+            background-color: #dedede; 
         }
     </style>
 """, unsafe_allow_html=True)
@@ -82,10 +79,8 @@ if selection == "Home":
     st.markdown("<h3 class='section' style='text-align: center;'>Your Health, Our Priority</h3>", unsafe_allow_html=True)
     st.markdown("<p class='section' style='text-align: center;'>At Tablets Clinic, we offer a variety of services to cater to your health needs.</p>", unsafe_allow_html=True)
     
-    # Adding additional spacing
-    st.markdown("<br>", unsafe_allow_html=True)
-    
-    # Adding additional information
+    st.markdown("<br>", unsafe_allow_html=True)  # Additional spacing
+
     st.markdown("""
     <h3 class='section' style='text-align: center; color: #2d572c;'>Why Tablets?</h3>
     <ul style='text-align: center; list-style-type: none; padding: 0;'>
@@ -93,7 +88,7 @@ if selection == "Home":
         <li style='margin: 10px 0; font-size: 18px;'>State-of-the-Art Laboratory</li>
         <li style='margin: 10px 0; font-size: 18px;'>Associated Authentic Pharmacy</li>
     </ul>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
     # Adding images to the Home page
     st.image("https://scontent.fpew2-1.fna.fbcdn.net/v/t39.30808-6/277790565_108630745157561_6472859447440928934_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=SrnIlVCDOiEQ7kNvgF9X4pt&_nc_ht=scontent.fpew2-1.fna&oh=00_AYDj5BF4fvrhzwZhh9S_6bAwCkUJQzCiPLDWQhl0MQIuoA&oe=66F51173", caption="Tablets Clinic", use_column_width=True)
@@ -102,7 +97,7 @@ if selection == "Home":
 
 # Departments Section
 elif selection == "Departments":
-    st.markdown("<h3 class='section'>Our Departments</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 class='section' style='margin-top: 80px;'>Our Departments</h3>", unsafe_allow_html=True)
     cols = st.columns(3)
     department_info = {
         "Cardiology": "Heart health and wellness.",
@@ -115,11 +110,11 @@ elif selection == "Departments":
 
     for i, (department, description) in enumerate(department_info.items()):
         with cols[i % 3]:
-            st.markdown(f"<div class='card'><h3>{department}</h3><p>{description}</p></div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='card' style='margin-top: 10px;'><h3>{department}</h3><p>{description}</p></div>", unsafe_allow_html=True)
 
 # Contact Us Section
 elif selection == "Contact Us":
-    st.markdown("<h3 class='section'>Contact Us</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 class='section' style='margin-top: 80px;'>Contact Us</h3>", unsafe_allow_html=True)
     st.markdown("""
         <div class='contact'>
             <p>For inquiries, please reach out via:</p>
