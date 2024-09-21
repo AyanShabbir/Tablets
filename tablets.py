@@ -2,8 +2,8 @@ import streamlit as st
 from PIL import Image
 
 # Load the logo from a local file
-logo_path = "/Users/ayans./Documents/Tablets/LOGObg.png"  # Replace with your logo filename and path if needed
-logo = Image.open(logo_path)
+logo_url = "https://github.com/AyanShabbir/Tablets/blob/main/LOGObg.png"  # Replace with your logo URL
+st.set_page_config(page_title="Tablets Clinic", layout="wide", page_icon=logo_url)
 
 # Set page configuration
 st.set_page_config(page_title="Tablets Clinic", layout="wide")
